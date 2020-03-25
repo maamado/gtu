@@ -31,6 +31,16 @@ public class ColaController {
 	public Cola find(@PathVariable("id") Long id) {
 		return repository.findOne(id);
 	}
+	
+	@GetMapping(path = "/comercio/{comercio}")
+	public Iterable<Cola> findAllByComercio(@PathVariable("comercio") String comercio) {
+		return repository.findAllByComercio(comercio);
+	}
+	
+	@GetMapping(path = "/cliente/{cliente}")
+	public Iterable<Cola> findAllByCliente(@PathVariable("cliente") String cliente) {
+		return repository.findAllByCliente(cliente);
+	}
 
 	@PostMapping(consumes = "application/json")
 	public Cola create(@RequestBody Cola cola) {
