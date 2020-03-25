@@ -8,5 +8,11 @@ import com.apirest.restservice.entity.Cola;
 @RestResource(exported = false)
 public interface ColaRepository extends JpaRepository<Cola, Long> {
 
+	Iterable<Cola> findAllBy(String comercio);
+
+	Iterable<Cola> findAllByComercio(String comercio);
+
+	Iterable<Cola> findAllByCliente(String cliente);
+
 
 }
